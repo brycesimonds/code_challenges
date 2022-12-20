@@ -6,10 +6,9 @@ RSpec.describe 'code challenges index' do
     code_2 = Code.create(title: 'NOT Splitter', rating: 10, problem_description: 'This should not appear')
 
     visit "/codes"
-
+    save_and_open_page
     expect(page).to have_link(code_1.title)
 
     expect(page).to_not have_link(code_2.title)
-
   end
 end
