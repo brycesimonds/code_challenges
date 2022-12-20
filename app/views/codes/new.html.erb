@@ -1,0 +1,14 @@
+<h1>New Code Challenge</h1>
+
+<%= form_with model: @code, local: true do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br>
+  <%= f.label :difficulty %>
+  <%= f.text_field :difficulty %>
+  <br>
+  <%= f.label :problem_description %>
+  <%= f.text_field :problem_description %>
+  <br>
+  <%= f.submit %>
+<% end %>
