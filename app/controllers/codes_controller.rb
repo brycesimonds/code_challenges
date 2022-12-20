@@ -3,6 +3,11 @@ class CodesController < ApplicationController
     @codes = Code.all
   end
 
+  def new
+    
+  end
+
   def show
+
   end
 end
