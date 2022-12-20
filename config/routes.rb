@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  resources :codes, only: [:index, :show]
+  root to: "codes#index"
+  
+  resources :codes
 end
