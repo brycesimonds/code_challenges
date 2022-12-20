@@ -7,11 +7,9 @@ RSpec.describe 'code challenges index' do
 
     visit "/codes"
 
-    expect(page).to have_content(code_1.title)
-    expect(page).to have_content(code_1.rating)
-    expect(page).to have_content(code_1.problem_description)
-    expect(page).to_not have_content(code_2.title)
-    expect(page).to_not have_content(code_2.rating)
-    expect(page).to_not have_content(code_2.problem_description)
+    expect(page).to have_link(code_1.title)
+
+    expect(page).to_not have_link(code_2.title)
+
   end
 end
