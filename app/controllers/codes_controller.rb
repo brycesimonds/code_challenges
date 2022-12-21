@@ -8,11 +8,17 @@ class CodesController < ApplicationController
   end
 
   def create
-
+    code = Code.new(code_params)
+    if code.save
+      redirect_to codes_path 
+    else 
+      redirect_to new_code_path
+      flash[:alert] = "Error: #{error_message(code.errors)}"
+    end
   end
 
   private
   def code_params
-    params.require(:code).permit(:title, :difficulty, :problem_description)
+    params.require(:code).permit(:title, :rating, :problem_description)
   end
 end

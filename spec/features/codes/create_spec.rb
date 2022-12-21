@@ -7,7 +7,7 @@ RSpec.describe 'code challenges creation' do
       
       expect(page).to have_content('New Code Challenge')
       expect(find('form')).to have_content('Title')
-      expect(find('form')).to have_content('Difficulty')
+      expect(find('form')).to have_content('Rating')
       expect(find('form')).to have_content('Problem description')
     end
   end
@@ -15,8 +15,9 @@ RSpec.describe 'code challenges creation' do
     context 'if given valid data' do 
       it 'creates the code challenge and redirects to the code index page' do 
         visit new_code_path
+       
         fill_in 'Title', with: 'Challenge 1'
-        fill_in 'Difficulty', with: 3
+        fill_in 'Rating', with: 3
         fill_in 'Problem description', with: 'Testing123'
 
         click_button 'Create Code'
