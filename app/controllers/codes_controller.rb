@@ -7,7 +7,7 @@ class CodesController < ApplicationController
     @code = Code.new
   end
 
-  def show
+  def create
 
   end
 
