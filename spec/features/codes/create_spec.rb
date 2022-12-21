@@ -25,5 +25,18 @@ RSpec.describe 'code challenges creation' do
         expect(page).to have_link('Challenge 1')
       end
     end
+    context 'if given invalid data' do 
+      it 'brings user back to new page and shows error message if rating is not an integer' do 
+        visit new_code_path
+       
+        fill_in 'Title', with: 'Challenge 1'
+        fill_in 'Rating', with: 'HERE WE GOOOO'
+        fill_in 'Problem description', with: 'Testing123'
+
+        click_button 'Create Code'
+        expect(page).to have_current_path new_code_path
+        expect(page).to have_content('Error: Rating is not a number')
+      end
+    end
   end
 end
