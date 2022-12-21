@@ -17,8 +17,12 @@ class CodesController < ApplicationController
     end
   end
 
+  def show
+    @code = Code.find(params[:id])
+  end
+
   private
   def code_params
-    params.require(:code).permit(:title, :rating, :problem_description)
+    params.require(:code).permit(:title, :rating, :problem_description, :solution)
   end
 end

@@ -1,2 +1,8 @@
-<h1>Codes#show</h1>
-<p>Find me in app/views/codes/show.html.erb</p>
+<h1><%= @code.title %></h1>
+<ul>
+  <li>Code Difficulty (1 = Hardest, 10 = Easiest): <%= @code.rating %></li>
+  <li><%= @code.problem_description %></li>
+  <% unless @code.solution == nil %>
+    <li>This Code Challenge's Solution: <%= @code.solution %></li>
+  <% end %>
+</ul>

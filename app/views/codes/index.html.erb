@@ -1,4 +1,6 @@
 <h1>Bryce's List of Completed Code Challenges</h1>
+<ol>
 <% @codes.each do |code| %>
-  <%= link_to "#{code.title}", code_path(code.id) %>
+    <li><%= link_to "#{code.title}", code_path(code.id) %></li>
 <% end %>
+</ol>
