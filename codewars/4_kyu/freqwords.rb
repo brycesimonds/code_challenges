@@ -30,9 +30,20 @@ def top_3_words(text)
   end
   new_array = hash.sort_by {|k, v| [v, k]}.reverse
   answer = []
-  # binding.pry
-  answer << new_array[0][0] 
-  answer << new_array[1][0] 
-  answer << new_array[2][0] 
-  return answer
+  if new_array.count == 3 
+    answer << new_array[0][0] 
+    answer << new_array[1][0] 
+    answer << new_array[2][0] 
+    answer
+  elsif new_array.count == 2
+    binding.pry
+    answer << new_array[0][0] 
+    answer << new_array[1][0] 
+    answer
+  elsif new_array.count == 1
+    answer << new_array[0][0] 
+    answer
+  else 
+    answer 
+  end 
 end
