@@ -37,18 +37,22 @@ def format_duration(seconds)
     "1 second"
   elsif seconds < 60
     "#{seconds} seconds"
+  elsif minutes == 60 && days < 1 && years < 1
+    "1 hour"
+  elsif minutes >= 60 && days < 1 && years < 1
+    minutes_remaining = minutes % 60
   elsif seconds % 60 == 0 && minutes == 1
-    puts "1 minute"
+    "1 minute"
   elsif seconds % 60 == 0 && minutes > 1
-    puts "#{minutes} minutes"
+    "#{minutes} minutes"
   elsif seconds % 60 != 0 && minutes >= 1
     seconds_remaining = seconds % 60
     if minutes.floor == 1 && seconds_remaining == 1
-      puts "1 minute and 1 second"
-    elsif minutes.floor == 1 && seconds_remaining > 2
-      puts "#{minutes.floor} minute and #{seconds_remaining} seconds"
+      "1 minute and 1 second"
+    elsif minutes.floor == 1 && seconds_remaining > 1
+      "#{minutes.floor} minute and #{seconds_remaining} seconds"
     else 
-      puts "#{minutes.floor} minutes and #{seconds_remaining} seconds"
+      "#{minutes.floor} minutes and #{seconds_remaining} seconds"
     end 
   end 
 end
