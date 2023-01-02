@@ -31,3 +31,15 @@ def valid_parentheses(string)
     end 
   end 
 end
+
+
+# BETTER ANSWER
+# def valid_parentheses(string)
+#   sum = 0
+#   string.chars.each do |x|
+#     sum += 1 if x == "("
+#     sum -= 1 if x == ")"
+#     return false if sum < 0
+#   end
+#   return sum == 0
+# end
