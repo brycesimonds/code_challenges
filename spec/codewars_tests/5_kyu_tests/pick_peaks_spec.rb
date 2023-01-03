@@ -4,7 +4,7 @@ require './codewars/5_kyu/pick_peaks.rb'
 RSpec.describe 'the pick_peaks method' do 
   it 'should support finding peaks' do 
     array1 = [1,2,3,6,4,1,2,3,2,1]
-    expect(pick_peaks(array1)).to eq({"pos"=>[3,7], "peaks"=>[6,3]}) #
+    expect(pick_peaks(array1)).to eq({"pos"=>[3,7], "peaks"=>[6,3]})
   end
 
   it 'should support finding peaks, but should ignore peaks on the edge of the array' do 
